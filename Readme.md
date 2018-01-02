@@ -1,7 +1,7 @@
 # Zeda Project Creator
 
 To compile this project, you will need to have a GTK Development Environment ready.
-Please see your Operating System's of choice reference for getting this setup.
+Please see the GTK Documentation for the Operating System of your choice for setup.
 
 When you are ready to build, you must first compile the resources:
 ``` 
