@@ -37,12 +37,10 @@ debug: $(Sources)
 #test:
 
 install:
-	test -d $(Bin)   && cp -r $(Bin)/*   $(Install)/bin/; \
-	test -d $(Lib)   && cp -r $(Lib)/*   $(Install)/lib/; \
-	test -d $(Man)   && cp -r $(Man)/*   $(Install)/man/; \
-	test -d $(Share) && cp -r $(Share)/* $(Install)/share/
+	test -d $(Bin)   && cp -r $(Bin)/*   $(Install)/bin/;
 
-#uninstall:
+uninstall:
+	rm -rf $(Install)/bin/$(Name)
 
 clean:
 	@rm -rf $(Build)
@@ -60,6 +58,6 @@ help:
 	@echo "	 debug	      Build '$(Name)' with '$(DFlags)'"
 #	@echo "	 test	      Run all tests in testing suite"
 	@echo "	 install      Install '$(Name)' to '$(Install)'"
-#	@echo "	 uninstall    Remove '$(Name)' from '$(Install)'"
+	@echo "	 uninstall    Remove '$(Name)' from '$(Install)'"
 	@echo "	 clean	      Delete temporary files"
 #	@echo "	 distclean    Delete all unshipped files"
