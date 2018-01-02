@@ -46,12 +46,17 @@ install:
 
 clean:
 	@rm -rf $(Build)
+	@rm -rf resources.c
+
+resources:
+	@glib-compile-resources --target=resources.c --generate-source --sourcedir=./ui ui/Resources.xml
 
 #distclean:
 
 help:
 	@echo "make: $(Name): Available options:"
-	@echo "	 (default)    Build '$(Name)' with '$(CFlags)'"
+	@echo "  (default)    Build '$(Name)' with '$(CFlags)'"
+	@echo "  resources	Build the Resouces, this must be done first"
 	@echo "	 debug	      Build '$(Name)' with '$(DFlags)'"
 #	@echo "	 test	      Run all tests in testing suite"
 	@echo "	 install      Install '$(Name)' to '$(Install)'"
